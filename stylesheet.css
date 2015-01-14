@@ -1,3 +1,30 @@
+#change-background {
+  position: relative;
+  float: right;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 30%;
+  font-size: 16px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+#filler {
+  height: 15em;
+}
+
+#box {
+  width: 10em;
+  height: 10em;
+  display: none;
+  position: absolute;
+}
+
+#links-react {
+  font-family: Futura, "Trebuchet MS", AppleGothic, sans-serif;
+  font-size: 20px;
+}
+
 body {
   background-image: url('images/squairy_light.png');
 }
@@ -28,8 +55,15 @@ h1 {
   margin-top: 100px;
 }
 
-#filler {
-  height: 15em;
+.react {
+  font-family: Futura, "Trebuchet MS", AppleGothic, sans-serif;
+}
+
+.info {
+  width: 220px;
+  border: 1px dashed #888888;
+  padding-left: 2px;
+  border-radius: 3%;
 }
 
 h3{
@@ -190,19 +224,11 @@ iframe {
   display: block;
 }
 
-#change-background {
-  position: relative;
-  float: right;
-  right: 50px;
-  width: 80px;
-  height: 80px;
-  border-radius: 30%;
-  font-size: 16px;
-  font-family: Verdana, Geneva, sans-serif;
-
-}
 
 button:focus {
   outline: 0;
 }
 
+.bold {
+  font-weight: bold;
+}
