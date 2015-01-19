@@ -1,4 +1,4 @@
-  if (sessionStorage.backgroundImage) {
+if (sessionStorage.backgroundImage) {
     var backgroundMode = sessionStorage.getItem("var-mode");
     document.getElementById('change-background').innerHTML = sessionStorage.getItem("time-mode");
     document.getElementsByTagName('body')[0].style.backgroundImage = sessionStorage.backgroundImage;

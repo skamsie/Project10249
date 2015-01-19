@@ -132,11 +132,11 @@ div.nav3:hover {
 }
 
 div.networks1 {
-  background-image: url('images/flickr_2.png')
+  background-image: url('images/github_2.png')
 }
 
 div.networks1:hover {
-  background-image: url('images/flickr_1.png');
+  background-image: url('images/github_1.png');
   border: 50%;
 }
 
@@ -150,11 +150,11 @@ div.networks2:hover {
 }
 
 div.networks3 {
-  background-image: url('images/github_2.png')
+  background-image: url('images/flickr_2.png')
 }
 
 div.networks3:hover {
-  background-image: url('images/github_1.png')
+  background-image: url('images/flickr_1.png')
 }
 
 .border {
