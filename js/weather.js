@@ -3,8 +3,8 @@ setInterval(getWeather, 60000);
 
 function getWeather() {
   $.simpleWeather({
-    location: '',
-    woeid: '20065566', //Berlin 10249
+    location: 'Berlin, BE, Germany',
+    woeid: '', //Berlin 10249
     unit: 'c',
     success: function(weather) {
       html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';

@@ -16,6 +16,9 @@
 
   <!-- Custom CSS -->
   <link href="css/style.css" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:400">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,7 +67,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h1>Outside</h1>
-          <div class=subtitle>Berlin 10249</div>
+          <div class=subtitle>Berlin, BE, Germany</div>
           <p id=weather>NA</p>
           <hr></hr>
           <h1>Inside</h1>
@@ -88,8 +91,13 @@
       <div class="row">
         <div class="col-lg-12">
           <h1>About</h1>
-          <p>This website is intended mostly for personal use.<br />
-          It displays weather information for Berlin and temperature and humidity values inside my apartment.</p>
+          <div id=about-text>
+            <p>This website is intended mostly for personal use.<br />
+              It displays weather information for Berlin and temperature and humidity values from my apartment.<br /><br />
+              Behind the scenes there is a RHT03 temperature sensor connected to an Arduino Ethernet board that periodically
+              sends temperature and humidity data (from inside) as GET requests that are interpreted on the server side.
+              For the outside meteo information I am using a jQuery plugin called <a href="http://simpleweatherjs.com">Simple Weather</a>.</p>
+          </div>
         </div>
       </div>
     </div>
