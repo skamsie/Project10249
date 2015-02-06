@@ -1,53 +1,114 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Project 10249</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
-    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Temperature readings">
+  <meta name="author" content="www.skamsie.ro">
+
+  <title>Project 10249</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
 </head>
 
-<body>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
-  <button id=change-background>Night Mode</button>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-  <div class='container'>
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">Project 10249</a>
+      </div>
 
-     <h1>Project 10249</h1>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden">
+            <a class="page-scroll" href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll nav-text" href="#about">About</a>
+          </li>
+        </ul>
+      </div> <!-- /.navbar-collapse -->
+    </div> <!-- /.container -->
+  </nav>
 
-     <div class='the-circles'>
-       <div class='circle1'>
-       <div class='border nav1'><a class=block-it href='react.html'>react</a></div>
-       </div>
-       <div class='circle2'>
-       <div class='border nav2'><a class=block-it href='video.html'>video</a></div>
-       </div>
-       <div class='circle3'>
-       <div class='border nav3'><a class=block-it href='photo.html'>photo</a></div>
-       </div>
-     </div>
+  <!-- Intro Section -->
+  <section id="intro" class="main-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Outside</h1>
+          <div class=subtitle>Berlin 10249</div>
+          <p id=weather>NA</p>
+          <hr></hr>
+          <h1>Inside</h1>
+          <div class=subtitle>Arduino readings</div>
+          <div class=arduino-readings>
+            <h2><span id=inside-temperature>NA</span>&deg;C</h2>
+            <ul>
+              <li>Humidity: <span id=inside-humidity>NA</span> %</li>
+              <li>Last Update: <span id=localtime>NA</span> CET</li>
+            </ul>
+          </div> <!-- /.arduino-readings -->
+          <hr></hr>
+        </div> <!-- /.col-lg-12 -->
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+  </section>
 
-     <div class=clear-both>&nbsp;</div>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>About</h1>
+          <p>This website is intended mostly for personal use.<br />
+          It displays weather information for Berlin and temperature and humidity values inside my apartment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-     <div class='the-circles'>
-       <div class='circle1'>
-       <div class='border networks1'><a class=block-it href='https://github.com/skamsie'></a></div>
-       </div>
-       <div class='circle2'>
-       <div class='border networks2'><a class=block-it href='http://skamsie.tumblr.com/'></a></div>
-       </div>
-       <div class='circle3'>
-       <div class='border networks3'><a class=block-it href='https://www.flickr.com/photos/skamsie'></a></div>
-       </div>
-     </div>
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
 
-     <div id='filler'>&nbsp;</div>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.js"></script>
 
-  </div>
+  <!-- Scrolling Nav JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scrolling-nav.js"></script>
+  
+  <!-- Weather plugin -->
+  <script src="js/jquery.simpleWeather.js"></script>
+  <script src="js/weather.js"></script>
+
 </body>
-<script type='text/javascript' src='scripts-index.js'>
-</script>
+
 </html>
