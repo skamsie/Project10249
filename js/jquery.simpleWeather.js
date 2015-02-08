@@ -1,4 +1,13 @@
 /*! simpleWeather v3.0.2 - http://simpleweatherjs.com */
+
+/* NOTES by Project10249:
+
+- changed gflags from 'R' to 'C' as it was returning wrong information for some locations (line 32)
+- catching 'undefined' error for data.query for invalid locations (line 44)
+- changed error message (line 113)
+
+*/
+
 (function($) {
   "use strict";
 
@@ -23,7 +32,7 @@
       var now = new Date();
       var weatherUrl = 'https://query.yahooapis.com/v1/public/yql?format=json&rnd='+now.getFullYear()+now.getMonth()+now.getDay()+now.getHours()+'&diagnostics=true&callback=?&q=';
       if(options.location !== '') {
-        weatherUrl += 'select * from weather.forecast where woeid in (select woeid from geo.placefinder where text="'+options.location+'" and gflags="R" limit 1) and u="'+options.unit+'"';
+        weatherUrl += 'select * from weather.forecast where woeid in (select woeid from geo.placefinder where text="'+options.location+'" and gflags="C" limit 1) and u="'+options.unit+'"';
       } else if(options.woeid !== '') {
         weatherUrl += 'select * from weather.forecast where woeid='+options.woeid+' and u="'+options.unit+'"';
       } else {
@@ -34,7 +43,7 @@
       $.getJSON(
         encodeURI(weatherUrl),
         function(data) {
-          if(data !== null && data.query !== null && data.query.results !== null && data.query.results.channel.description !== 'Yahoo! Weather Error') {
+          if(data !== null && typeof data.query != "undefined" && data.query !== null && data.query.results !== null && data.query.results.channel.description !== 'Yahoo! Weather Error') {
             var result = data.query.results.channel,
                 weather = {},
                 forecast,
@@ -103,7 +112,7 @@
 
             options.success(weather);
           } else {
-            options.error({message: "There was an error retrieving the latest weather information. Please try again.", error: data.query.results.channel.item.title});
+            options.error({message: "There was an error retrieving the latest weather information for '" + options.location + "'."});
           }
         }
       );

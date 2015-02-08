@@ -9,65 +9,6 @@
     font-style: normal;
 }
 
-body {
-  width: 100%;
-  height: 100%;
-  font-family: Futura, Lato, "Helvetica Neue", "Trebuchet MS", AppleGothic, sans-serif;
-  font-size: 13px;
-}
-
-html {
-  width: 100%;
-  height: 100%;
-}
-
-h1 {
-  font-size: 45px;
-  color: #fff;
-}
-
-@media(min-width:767px) {
-  .navbar {
-    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-    transition: background .5s ease-in-out,padding .5s ease-in-out;
-  }
-
-  .top-nav-collapse {
-    padding: 0;
-  }
-}
-
-.main-section {
-  min-height: 100%;
-  padding-top: 100px;
-  text-align: center;
-  background-color: #276B9D;
-}
-
-.about-section {
-    min-height: 100%;
-    padding-top: 100px;
-    text-align: center;
-    background: #808080;
-}
-
-#weather li,
-.arduino-readings li{
-  margin: 0px auto;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-i {
-  color: #fff;
-  font-family: weather;
-  font-size: 80px;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 1.0;
-}
-
 .icon-0:before { content: ":"; }
 .icon-1:before { content: "p"; }
 .icon-2:before { content: "S"; }
@@ -117,8 +58,68 @@ i {
 .icon-46:before { content: "U"; }
 .icon-47:before { content: "S"; }
 
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Futura, "Helvetica Neue", Lato, "Trebuchet MS", AppleGothic, sans-serif;
+  font-size: 13px;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: 45px;
+  color: #fff;
+}
+
+@media(min-width:767px) {
+  .navbar {
+    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+  }
+
+  .top-nav-collapse {
+    padding: 0;
+  }
+}
+
+.main-section {
+  min-height: 100%;
+  padding-top: 100px;
+  text-align: center;
+  background-color: #276B9D;
+}
+
+.select-location {
+  min-height: 100%;
+  padding-top: 100px;
+  text-align: center;
+  background-color: #383838;
+}
+
+.about-section {
+    min-height: 100%;
+    padding-top: 100px;
+    text-align: center;
+    background: #808080;
+}
+
+i {
+  color: #fff;
+  font-family: weather;
+  font-size: 80px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+}
+
 #weather h2,
-.arduino-readings h2 {
+.arduino-readings h2,
+#custom-weather h2 {
   margin: 0 0 8px;
   color: #fff;
   font-size: 45px;
@@ -128,13 +129,15 @@ i {
 }
 
 #weather ul,
-.arduino-readings ul {
+.arduino-readings ul,
+.custom-location ul {
   margin: 0;
   padding: 0;
 }
 
 #weather li,
-.arduino-readings li {
+.arduino-readings li,
+#custom-weather li {
   background: #fff;
   background: rgba(255,255,255,0.90);
   padding: 20px;
@@ -142,6 +145,8 @@ i {
   border-radius: 5px;
   margin-top: 20px;
   margin-left: 10px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .subtitle {
@@ -151,7 +156,7 @@ i {
 }
 
 hr {
-  max-width: 600px;
+  max-width: 540px;
 }
 
 .nav-text {
@@ -163,9 +168,128 @@ hr {
   max-width: 600px;
   margin: 0 auto;
   font-size: 16px;
+  text-align: left;
 }
+
+.weather-items {
+  padding-top: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  color: white;
+  text-align: left;
+  font-size: 17px;
+}
+
+.weather-items h4 {
+  margin-bottom: 0;
+}
+
+#weather-city {
+  text-transform: uppercase;
+}
+
+#weather-items-hr {
+  margin-top: 5px;
+  margin-bottom: 0;
+  display: none;
+}
+  
 
 #about-text a {
   color: #D0C9D9;
 }
 
+#input-location {
+  background: #fff;
+  background: rgba(255,255,255,0.90);
+  height: 44px;
+  text-transform: uppercase;
+  font-size: 16px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 1px solid black;
+  padding-left: 4px;
+}
+
+#submit-location {
+  height: 44px;
+  padding: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-color: transparent;
+  background-color: #D2D2D2;
+  font-size: 14px;
+  vertical-align: bottom;
+}
+
+#submit-location:active {
+  background-color: #808080;
+}
+
+
+::-moz-placeholder {
+  color: grey;
+  font-size: 12px;
+  padding-top: 4px;
+}
+
+::-webkit-input-placeholder {
+  color: grey;
+  font-size: 12px;
+  padding-top: 4px;
+}
+
+:-ms-input-placeholder {
+  color: grey;
+  font-size: 12px;
+  padding-top: 4px;
+}
+
+.low {
+  color: #A5D6FF;
+}
+
+.high {
+  color: salmon;
+}
+
+.small-icon {
+  font-family: weather;
+  font-size: 36px;
+  line-height: 0;
+}
+
+#error {
+  color: salmon;
+  font-size: 17px;
+}
+
+#input-area {
+  font-size: 0;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+#units-button {
+  font-size: 14px;
+  height: 44px;
+  width: 30px;
+  border: none;
+  vertical-align: bottom;
+  padding-left: 2px;
+  background-color: LightSalmon;
+}
+
+.colored-button {
+  background-color: white !important;
+}
+
+.empty-div {
+  height: 30px;
+}
+
+.empty-div-big {
+  height: 45px;
+}
