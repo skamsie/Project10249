@@ -75,7 +75,7 @@ h1 {
   color: #fff;
 }
 
-@media(min-width:767px) {
+@media(min-width:768px) {
   .navbar {
     -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -84,6 +84,13 @@ h1 {
 
   .top-nav-collapse {
     padding: 0;
+  }
+}
+
+@media(max-width:767px) {
+
+  #input-location {
+    max-width: 150px; 
   }
 }
 
